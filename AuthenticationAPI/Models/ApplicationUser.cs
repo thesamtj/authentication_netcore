@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AuthenticationtAPI.Models
+namespace AuthenticationAPI.Models
 {
     public class ApplicationUser: IdentityUser
     {
