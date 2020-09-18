@@ -56,7 +56,7 @@ namespace AuthenticationAPI
 
             //Jwt Authentication 
 
-            var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSetings:JWT_Secret"].ToString());
+            var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:JWT_Secret"].ToString());
 
             services.AddAuthentication(x =>
             {
@@ -89,8 +89,8 @@ namespace AuthenticationAPI
 
             app.UseAuthentication();
 
-            app.UseCors(options =>
-            options.WithOrigins(Configuration["ApplicationSetings:Client_URL"].ToString())
+            app.UseCors(builder =>
+            builder.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString())
             .AllowAnyMethod()
             .AllowAnyHeader()
            );
